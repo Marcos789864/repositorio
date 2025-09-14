@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import intro from '../src/animations/developer.json';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import PadelClub from '../src/images/PadelClub.png';
 import SuperMercado from '../src/images/supermercado.png';
 import './App.css';
@@ -48,7 +48,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
   // Primera terminal
-  let currentText1 = '';
+  let currentText1 = useRef("");
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -64,7 +64,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Segunda Terminal
+
   useEffect(() => {
     if (
       !experiencias[currentIndex1] ||
@@ -104,6 +104,7 @@ function App() {
     setDescExperiencia('');
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex1]);
 
   //Tercer Terminal
@@ -136,6 +137,7 @@ function App() {
     setdescProyecto('');
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex2]);
 
   return (
@@ -228,7 +230,7 @@ function App() {
               >
                 Ver descripción
               </button>
-               <button className="terminal-button "> <a href= {repo} target="_blank"> {buttonInfo} </a> </button>
+               <button className="terminal-button "> <a href= {repo} target="_blank" rel="noreferrer" > {buttonInfo} </a> </button>
                </div>
             </div>
             <button
