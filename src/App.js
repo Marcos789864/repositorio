@@ -150,7 +150,7 @@ function App() {
           <h1>Hola 👋, soy Marcos</h1>
           <p>Desarrollador Backend enfocado en crear APIs robustas y sistemas escalables.</p>
           <div className="buttons">
-            <button className="primary">Ver proyectos</button>
+            <button className="primary" onClick={() => document.getElementById("proyectos").scrollIntoView({ behavior: "smooth" })} >Ver proyectos</button>
             <button className="secondary"> <a href=" https://www.canva.com/design/DAGugQYr_0Q/Q_sLaNwozOX4HJ50-21bqw/view?utm_content=DAGugQYr_0Q&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1a74f537c0" target="_blank">Ver CV</a> </button>
           </div>
         </div>
@@ -203,7 +203,7 @@ function App() {
         </div>
       </section>
 
-      <section className="section4">
+      <section className="section4" id="proyectos">
         <h1> Proyectos</h1>
         <div className="terminal">
           <div className="topterminal"></div>
