@@ -48,21 +48,21 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
   // Primera terminal
-  let currentText1 = useRef("");
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < fullText.length) {
-        currentText1 += fullText[i]
-        setText(currentText1);
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 50);
+  const currentText1 = useRef("");
+useEffect(() => {
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < fullText.length) {
+      currentText1.current += fullText[i];
+      setText(currentText1.current);
+      i++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 50);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearInterval(interval);
+}, []);
 
 
   useEffect(() => {
@@ -104,8 +104,8 @@ function App() {
     setDescExperiencia('');
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex1]);
+    
+  }, [currentIndex1, experiencias, descripcionExperiencias]);
 
   //Tercer Terminal
   useEffect(() => {
@@ -137,8 +137,8 @@ function App() {
     setdescProyecto('');
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex2]);
+    
+  }, [currentIndex2, fotos, descripcionProyectos, repositorio, botonInfo]);
 
   return (
     <>
