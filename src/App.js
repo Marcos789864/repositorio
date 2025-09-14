@@ -106,7 +106,7 @@ useEffect(() => {
 
     return () => clearInterval(interval);
     
-  }, [currentIndex1, experiencias, descripcionExperiencias]);
+  }, [currentIndex1]);
 
   //Tercer Terminal
   useEffect(() => {
@@ -139,7 +139,7 @@ useEffect(() => {
 
     return () => clearInterval(interval);
     
-  }, [currentIndex2, fotos, descripcionProyectos, repositorio, botonInfo]);
+  }, [currentIndex2]);
 
   return (
     <>
