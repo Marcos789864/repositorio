@@ -48,13 +48,14 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
   // Primera terminal
-  const currentText1 = useRef("");
+  const currentText1 = useRef(""); 
+
 useEffect(() => {
   let i = 0;
   const interval = setInterval(() => {
     if (i < fullText.length) {
-      currentText1.current += fullText[i];
-      setText(currentText1.current);
+      currentText1.current += fullText[i]; 
+      setText(currentText1.current);     
       i++;
     } else {
       clearInterval(interval);
